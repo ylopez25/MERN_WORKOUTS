@@ -11,6 +11,10 @@ app.get('/',(req,res) => {
     res.json({mssg:'lets try this again'})
 })
 
+app.post('/',(req,res) => {
+   res.json({mssg:'post ROUTE'})
+})
+
 app.listen(PORT, () => {
     console.log(`Listenging on ${PORT}`)
 })
