@@ -9,6 +9,8 @@ router.post('/', (req,res) => {
     res.json({ mssg: 'post route'})
 })
 
-
+router.patch('/', (req,res) => {
+    res.json({mssg:'update route'})
+})
 
 module.exports = router;
