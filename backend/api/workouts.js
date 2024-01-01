@@ -13,4 +13,8 @@ router.patch('/', (req,res) => {
     res.json({mssg:'update route'})
 })
 
+router.delete('/', (req,res) => {
+    res.json({mssg:'delete route'})
+})
+
 module.exports = router;
