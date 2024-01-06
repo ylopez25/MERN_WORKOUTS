@@ -9,6 +9,10 @@ router.get('/', (req,res) => {
     }
 })
 
+router.get('/:id', (req,res) => {
+    res.json({mssg: 'get single workout'})
+})
+
 router.post('/', (req,res) => {
     res.json({ mssg: 'post route'})
 })
@@ -17,7 +21,7 @@ router.patch('/', (req,res) => {
     res.json({mssg:'update route'})
 })
 
-router.delete('/', (req,res) => {
+router.delete('/:id', (req,res) => {
     res.json({mssg:'delete route'})
 })
 
