@@ -10,14 +10,18 @@ router.get('/', (req,res) => {
 })
 
 router.get('/:id', (req,res) => {
-    res.json({mssg: 'get single workout'})
+    try {
+        res.json({mssg: 'get single workout'})
+    }catch (e) {
+        res.json({e:e.message})
+    }
 })
 
 router.post('/', (req,res) => {
     res.json({ mssg: 'post route'})
 })
 
-router.patch('/', (req,res) => {
+router.patch('/:id', (req,res) => {
     res.json({mssg:'update route'})
 })
 
