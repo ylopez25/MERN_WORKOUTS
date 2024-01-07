@@ -34,7 +34,11 @@ router.patch('/:id', (req,res) => {
 })
 
 router.delete('/:id', (req,res) => {
-    res.json({mssg:'delete route'})
+    try {
+        res.json({mssg:'delete route'})
+    }catch (e) {
+        res.json({e:e.message})
+    } 
 })
 
 module.exports = router;
