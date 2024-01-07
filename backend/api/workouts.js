@@ -26,7 +26,11 @@ router.post('/', (req,res) => {
 })
 
 router.patch('/:id', (req,res) => {
+    try {
         res.json({mssg:'update route'})
+    }catch (e) {
+        res.json({e:e.message})
+    }
 })
 
 router.delete('/:id', (req,res) => {
