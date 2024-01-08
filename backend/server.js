@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config()
 const PORT = process.env.PORT;
-const workoutsApi = require('./api/workouts')
+const workoutsApi = require('./routes/workouts')
 
 app.use("/api/workouts", workoutsApi)
 
