@@ -1,4 +1,5 @@
-const workout = require('../models/workoutModal')
+const workout = require('../models/workoutModal');
+const mongoose = require('mongoose')
 
 //get all workouts
 const getAllWorkouts = async (req,res) => {
@@ -13,6 +14,10 @@ const getAllWorkouts = async (req,res) => {
 //get one workout
 const getOneWorkout = async (req,res) => {
     const { id } = req.params;
+
+    if(!mongoose.Types.ObjectId.isValid(id)) {
+        return res.json({error: 'No such id found!'})
+    }
      const oneWorkout = await workout.findById(id);
      if(!oneWorkout) {
         return res.status(404).json({error: 'No such workout'})
@@ -46,4 +51,5 @@ module.exports= {
     getAllWorkouts,
     getOneWorkout,
     postWorkout,
+    deleteWorkout
 }
