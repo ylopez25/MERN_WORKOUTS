@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const {postWorkout} = require("../controllers/workoutController")
 
-const workout = require('../models/workoutModal')
 
 router.get('/', (req,res) => {
     try {
@@ -20,10 +20,8 @@ router.get('/:id', (req,res) => {
 })
 
 router.post('/', async (req,res) => {
-    const { load, reps, title } = req.body
     try {
-        const workoutObj= await workout.create({ load,reps,title })
-        res.status(200).json({ workoutObj })
+        res.status(200).js({ postWorkout })
     }catch (e) {
         res.status(400).json({e:e.message})
     }
