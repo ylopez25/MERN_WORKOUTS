@@ -19,12 +19,13 @@ router.get('/:id', (req,res) => {
     }
 })
 
-router.post('/', (req,res) => {
+router.post('/', async (req,res) => {
+    const { load, reps, title } = req.body
     try {
-        const { load, reps, title} = req.body
-        res.json({ mssg: 'post route'})
+        const workoutObj= await workout.create({ load,reps,title })
+        res.status(200).json({ workoutObj })
     }catch (e) {
-        res.json({e:e.message})
+        res.status(400).json({e:e.message})
     }
 })
 
