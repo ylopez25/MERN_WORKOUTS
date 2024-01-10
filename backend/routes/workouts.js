@@ -19,13 +19,7 @@ router.get('/:id', (req,res) => {
     }
 })
 
-router.post('/', async (req,res) => {
-    try {
-        res.status(200).js({ postWorkout })
-    }catch (e) {
-        res.status(400).json({e:e.message})
-    }
-})
+router.post('/', postWorkout)
 
 router.patch('/:id', (req,res) => {
     try {
