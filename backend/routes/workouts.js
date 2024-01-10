@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const workout = require('../models/workoutModal')
+
 router.get('/', (req,res) => {
     try {
         res.json({mssg:'Working middleware!!'})
@@ -19,6 +21,7 @@ router.get('/:id', (req,res) => {
 
 router.post('/', (req,res) => {
     try {
+        const { load, reps, title} = req.body
         res.json({ mssg: 'post route'})
     }catch (e) {
         res.json({e:e.message})
