@@ -1,23 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const {postWorkout} = require("../controllers/workoutController")
+const {getAllWorkouts, getOneWorkout, postWorkout} = require("../controllers/workoutController")
 
 
-router.get('/', (req,res) => {
-    try {
-        res.json({mssg:'Working middleware!!'})
-    }catch(e){
-        res.json({e:e.message})
-    }
-})
+router.get('/', getAllWorkouts)
 
-router.get('/:id', (req,res) => {
-    try {
-        res.json({mssg: 'get single workout'})
-    }catch (e) {
-        res.json({e:e.message})
-    }
-})
+router.get('/:id', getOneWorkout)
 
 router.post('/', postWorkout)
 

@@ -31,6 +31,16 @@ const postWorkout =  async (req,res) => {
 }
 
 //delete workout
+const deleteWorkout = async (req,res) => {
+    const { id } = req.params;
+    const deletedWorkout = await workout.delete( id );
+    try {
+        res.status(200).json(deletedWorkout)
+    }catch ( e ) {
+        res.status(200).json({e:e.message})
+    }
+}
+//Update 
 
 module.exports= {
     getAllWorkouts,
