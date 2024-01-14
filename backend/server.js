@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 const PORT = process.env.PORT;
 const workoutsApi = require('./routes/workouts')
-
+const bodyParser = require('body-parser');
+//bodyparser
+app.use(bodyParser.json())
 app.use("/api/workouts", workoutsApi)
 
 //connect db 

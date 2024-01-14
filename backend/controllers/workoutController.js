@@ -26,11 +26,12 @@ const getOneWorkout = async (req,res) => {
 }
 //post workout
 const postWorkout =  async (req,res) => {
-    const {load,reps,title} = req.body;
+    const {title,reps,load} = req.body;
     try {
-        const workoutObj = await workout.create({load,reps,title})
+        const workoutObj = await workout.create({title,reps,load})
         res.status(200).json(workoutObj)
     }catch (e) {
+        console.log(e.message)
         res.status(400).json({e:e.message})
     }
 }
