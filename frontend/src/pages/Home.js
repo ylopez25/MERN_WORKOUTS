@@ -11,7 +11,7 @@ const Home = () => {
                 setWorkouts(json)
             }
         }   
-        fetchWorkouts(json)
+        fetchWorkouts()
      }, [])
   return (
     <div>
