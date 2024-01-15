@@ -13,13 +13,15 @@ export default function WorkoutForm() {
 
         const workout = {title, load, reps};
 
-        const response = await fetch('/api/workouts', {
+        const responsed = await fetch('/api/workouts', {
             method: 'POST',
-            body: JSON.Stringify(workout),
+            body: JSON.stringify(workout),
             headers: {
                 'Content-Type' : 'application/json'
             } 
-        }).json();
+        })
+        
+        const response = await responsed.json();
 
         if(!response.ok) {
             setError(response.err)
@@ -35,7 +37,7 @@ export default function WorkoutForm() {
 
     }
   return (
-    <form onSubmit={handleSubmit()}>
+    <form className='create' onSubmit={handleSubmit}>
         <label>Title:</label>
         <input type="text"
         onChange= {(e) => setTitle(e.target.value)}
@@ -43,18 +45,17 @@ export default function WorkoutForm() {
         />
 
         <label>Load (kg):</label>
-        <input type="text" 
+        <input type="number" 
         onChange = {(e) => setLoad(e.target.value)}
         value={load}
         />
-
         <label>Reps:</label>
-        <input type="text"
+        <input type="number"
         onChange = {(e) => setReps(e.target.value)}
         value={reps}
         />
-
         <button>Submit</button>
+        {err && <div>{err}</div>}
     </form>
   )
 }
