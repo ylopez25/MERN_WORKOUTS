@@ -44,7 +44,7 @@ export default function WorkoutForm() {
       <label>Reps:</label>
       <input type="number" onChange={(e) => setReps(e.target.value)} value={reps} />
       <button>Submit</button>
-      {err && <div>{err}</div>}
+      { <div>{err}</div>}
     </form>
   );
 }
