@@ -1,3 +1,5 @@
+import { createContext, useReducer } from 'react'
+
 export const WorkoutsContext = createContext()
 
 export const workoutsReducer = (state, action) => {
@@ -6,7 +8,7 @@ export const workoutsReducer = (state, action) => {
             return {
                 workouts: action.payload
             }
-        case 'CREATE_WORKxUT' : 
+        case 'CREATE_WORKOUT' : 
             return {
                 workouts: [action.payload, ...state.workouts]
             }
