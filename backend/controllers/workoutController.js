@@ -30,9 +30,8 @@ const postWorkout =  async (req,res) => {
     try {
         const workoutObj = await workout.create({title,reps,load})
         res.status(200).json(workoutObj)
-    }catch (e) {
-        console.log(e.message)
-        res.status(400).json({e:e.message})
+    }catch (error) {
+        res.status(400).json({error:error.message})
     }
 }
 
