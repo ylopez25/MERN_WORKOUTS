@@ -25,16 +25,16 @@ export default function WorkoutForm() {
 
     const response = await responsed.json();
 
-    if (!response.ok) {
+    if (!responsed.ok) {
       setError(response.err);
     }
 
-    if (response.ok) {
+    if (responsed.ok) {
       setTitle("");
       setLoad("");
       setReps("");
       setError(null);
-      dispatch({type: "CREATE_WORKOUTS", payload: response});
+      dispatch({ type: "CREATE_WORKOUTS", payload: response });
       console.log("new workout added", response);
     }
   };
