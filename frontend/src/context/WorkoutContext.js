@@ -8,7 +8,7 @@ export const workoutsReducer = (state, action) => {
             return {
                 workouts: action.payload
             }
-        case 'CREATE_WORKOUT' : 
+        case 'CREATE_WORKOUTS' : 
             return {
                 workouts: [action.payload, ...state.workouts]
             }

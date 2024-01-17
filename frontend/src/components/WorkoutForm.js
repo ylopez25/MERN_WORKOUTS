@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 export default function WorkoutForm() {
+  const { dispatch } = useWorkoutsContext();
   const [title, setTitle] = useState("");
   const [load, setLoad] = useState("");
   const [reps, setReps] = useState("");
@@ -32,7 +34,7 @@ export default function WorkoutForm() {
       setLoad("");
       setReps("");
       setError(null);
-      dispatch({ type: 'CREATE_WORKOUT', payload: json });
+      dispatch({type: "CREATE_WORKOUTS", payload: response});
       console.log("new workout added", response);
     }
   };
@@ -45,7 +47,7 @@ export default function WorkoutForm() {
       <label>Reps:</label>
       <input type="number" onChange={(e) => setReps(e.target.value)} value={reps} />
       <button>Submit</button>
-      { <div>{err}</div>}
+      {err}
     </form>
   );
 }
