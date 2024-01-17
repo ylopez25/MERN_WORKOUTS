@@ -7,7 +7,7 @@ export default function WorkoutForm() {
   const [title, setTitle] = useState("");
   const [load, setLoad] = useState("");
   const [reps, setReps] = useState("");
-  const [err, setError] = useState(null);
+  const [error, setError] = useState(null)
 
   //handle submit
   const handleSubmit = async (e) => {
@@ -26,7 +26,7 @@ export default function WorkoutForm() {
     const response = await responsed.json();
 
     if (!responsed.ok) {
-      setError(response.err);
+      setError(response.error);
     }
 
     if (responsed.ok) {
@@ -47,7 +47,7 @@ export default function WorkoutForm() {
       <label>Reps:</label>
       <input type="number" onChange={(e) => setReps(e.target.value)} value={reps} />
       <button>Submit</button>
-      {err}
+      {error && <div>{error}</div>}
     </form>
   );
 }
