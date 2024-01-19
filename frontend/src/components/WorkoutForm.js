@@ -43,11 +43,11 @@ export default function WorkoutForm() {
   return (
     <form className="create" onSubmit={handleSubmit}>
       <label>Title:</label>
-      <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
+      <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className={emptyFields.includes('title') ? 'error' : ''} />
       <label>Load (kg):</label>
-      <input type="number" onChange={(e) => setLoad(e.target.value)} value={load} />
+      <input type="number" onChange={(e) => setLoad(e.target.value)} value={load} className={emptyFields.includes('load') ? 'error' : ''} />
       <label>Reps:</label>
-      <input type="number" onChange={(e) => setReps(e.target.value)} value={reps} />
+      <input type="number" onChange={(e) => setReps(e.target.value)} value={reps} className={emptyFields.includes('reps') ? 'error' : ''} />
       <button>Submit</button>
       {error && <div>{error}</div>}
     </form>

@@ -95,4 +95,6 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
-
+input.error {
+  border: 2px solid red;
+}
