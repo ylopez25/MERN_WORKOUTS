@@ -36,20 +36,21 @@ export default function WorkoutForm() {
       setLoad("");
       setReps("");
       setError(null);
+      setEmptyFields([])
       dispatch({ type: "CREATE_WORKOUTS", payload: response });
       console.log("new workout added", response);
     }
   };
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <label>Title:</label>
+      <label>Excersize Title:</label>
       <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className={emptyFields.includes('title') ? 'error' : ''} />
       <label>Load (kg):</label>
       <input type="number" onChange={(e) => setLoad(e.target.value)} value={load} className={emptyFields.includes('load') ? 'error' : ''} />
       <label>Reps:</label>
       <input type="number" onChange={(e) => setReps(e.target.value)} value={reps} className={emptyFields.includes('reps') ? 'error' : ''} />
       <button>Submit</button>
-      {error && <div>{error}</div>}
+      {error && <div>*{error}*</div>}
     </form>
   );
 }
