@@ -7,7 +7,8 @@ export default function WorkoutForm() {
   const [title, setTitle] = useState("");
   const [load, setLoad] = useState("");
   const [reps, setReps] = useState("");
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
+  const [emptyFields, setEmptyFields] = useState([]);
 
   //handle submit
   const handleSubmit = async (e) => {
@@ -27,6 +28,7 @@ export default function WorkoutForm() {
 
     if (!responsed.ok) {
       setError(response.error);
+      setEmptyFields(response.emptyFields)
     }
 
     if (responsed.ok) {
