@@ -7,6 +7,10 @@ export default function Navbar() {
         <Link to="/">
           <h1>Workout buddy</h1>
         </Link>
+        <div>
+        <span>Sign in /</span>
+        <span> Sign up</span>
+        </div>
       </div>
     </header>
   );
