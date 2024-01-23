@@ -2,12 +2,12 @@ const express = require('express');
 const route = express.Router();
 
 //login
-router.post('/login', () => {
+route.post('/login', () => {
 
 })
 //signup
-router.post('/signup', () => {
+route.post('/signup', () => {
 
 })
 
-module.exports=router;
+module.exports=route;
