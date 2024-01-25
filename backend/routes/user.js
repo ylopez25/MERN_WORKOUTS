@@ -1,13 +1,9 @@
 const express = require('express');
-const route = express.Router();
+const router = express.Router();
 
 //login
-route.post('/login', (res,req) => {
-    res.status(200).json({message: 'WORKING login'})
-})
+router.get('/login')
 //signup
-route.post('/signup', (req,res) => {
-    res.status(200).json({message:'WORKING signup'})
-})
+router.get('/signup')
 
-module.exports=route;
+module.exports=router;
