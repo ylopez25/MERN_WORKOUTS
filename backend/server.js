@@ -8,7 +8,7 @@ const userApi = require('./routes/user')
 const bodyParser = require('body-parser');
 //bodyparser
 app.use(bodyParser.json())
-app.use(nodyParser.json())
+app.use(bodyParser.json())
 
 app.use("/api/workouts", workoutsApi)
 app.use("/api/users", userApi)
