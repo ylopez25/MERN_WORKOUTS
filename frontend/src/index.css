@@ -2,11 +2,11 @@
 
 /*layout*/
 :root {
-  --primary: #1aac83;
+  --primary: #1a21ac;
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: #e1dedc;
   margin:0;
   font-family: 'Poppins';
 }
@@ -14,13 +14,13 @@ header {
   background: #fff;
 }
 header .container {
-  max-width:1400px;
+  /* max-width:1400px; */
   margin: 0 auto;
-  padding: 10px 50px;
+  padding: 0 480px;
   display:flex;
   align-items: center;
   justify-content: space-between;
-  color:white;
+  /* color:white; */
   background-color:rgb(118, 167, 195);
 }
 header a {
