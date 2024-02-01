@@ -5,7 +5,10 @@ export default function Navbar() {
     <header>
       <div className="container">
         <Link to="/">
-          <h1>Workout buddy</h1>
+          <h1>Workouts</h1>
+        </Link>
+        <Link to="/">
+          <h1>Profile</h1>
         </Link>
         <div>
         <span>Sign in /</span>
