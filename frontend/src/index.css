@@ -20,6 +20,7 @@ header .container {
   display:flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 1em;
   /* color:white; */
   background-color:rgb(118, 167, 195);
 }
@@ -42,7 +43,8 @@ header a {
 .workout-details {
   background-color: #fff;
   border-radius:4px;
-  margin: 20px auto;
+  border: 1px solid;
+  margin: 2px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0,.05);
