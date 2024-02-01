@@ -59,17 +59,22 @@ header a {
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+
+.workout-details .wkd-span {
   position: absolute;
   cursor: pointer;
-  top: 20px;
+  bottom: 50px;
   right: 20px;
   padding: 6px;
+}
+.workout-details span {
+  padding: 6px;
+  margin:6px;
   border-radius: 50%;
   background: #f1f1f1;
   color: #333;
 }
-/*new workoit form*/
+/*new workout form*/
 label, input {
   display: block;
 }
