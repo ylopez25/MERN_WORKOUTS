@@ -10,7 +10,16 @@ export default function Navbar() {
         <Link to="/">
           <h1>Profile</h1>
         </Link>
-        <input type="text" />
+        <form>
+        <input
+          placeholder="Something that needs to be done..."
+          // value={userInput}
+          // onChange={handleChange}
+        />
+        <button type="submit">
+         search
+        </button>
+      </form>
       </div>
     </header>
   );
